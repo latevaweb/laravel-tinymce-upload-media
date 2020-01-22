@@ -43,3 +43,40 @@ If you want to change the service that manages the file upload or any other conf
 ``` bash
 php artisan vendor:publish --provider="LaTevaWeb\TinyMCE\TinyMCEServiceProvider" --tag=config
 ```
+
+## Example
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+        <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+        <script>           
+            tinymce.init({
+                selector: 'textarea',
+                relative_urls: false,
+                file_browser_callback: function (field_name, url, type) {
+                    // trigger file upload form
+                    if (type == 'image') $('#formUpload input').click();
+                },
+                toolbar: [ "code" ],
+                menubar: true,
+                plugins: [
+                    "image link code"
+                ]
+            });
+        </script>
+    </head>
+    <body>
+        @include('tinymce::upload_form')
+        <textarea></textarea>
+    </body>
+</html>
+
+```
