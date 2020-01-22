@@ -1,0 +1,43 @@
+{
+  "name": "latevaweb/laravel-tinymce-upload-media",
+  "description": "",
+  "keywords": [
+    "laravel",
+    "tinymce",
+    "media",
+    "upload"
+  ],
+  "homepage": "https://github.com/latevaweb/laravel-tinymce-upload-media",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marc Guinea",
+      "email": "marc@latevaweb.com",
+      "homepage": "https://www.latevaweb.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "illuminate/support": "^6.0",
+    "illuminate/http": "^6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "LaTevaWeb\\TinyMCE\\": "src"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "LaTevaWeb\\TinyMCE\\TinyMCEServiceProvider"
+      ]
+    }
+  }
+}
